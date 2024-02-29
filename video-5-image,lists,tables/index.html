@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- alt is used when the image is not there or we type image name wrong 
+        it will display some image structure so when we use alt it will show 
+        text at side of image to know which image is -->
+    <img src="train.jpeg" alt="train image">
+
+    <!-- tables
+    tr = table row
+    th = table heading 
+    td = table data 
+    rowspan = by default it takes 1 cell and we can mention how many cells to take for rows
+    colspan = same as rowspan it takes the columns 
+    caption = heading of the table -->
+    <table>
+        <caption>Details</caption>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <tr>
+            <td>shiva</td>
+            <td>prasad</td>
+            <td>cse</td>
+        </tr>
+        <!-- <tr>
+            <td>hari</td>
+            <td>prasad</td>
+            <td>ece</td>
+        </tr> -->
+        <tr>
+            <td colspan="2">dinesh</td>
+            <td rowspan="2">shiva</td>
+            <td>were</td>
+        </tr>
+        <tr>
+            <td>bharath</td>
+            <td>bingi</td>
+        </tr>
+    </table>
+
+    <!-- Lists
+    1. ul = Unordered list
+    2. ol = Ordered list 
+    
+    ul = Unordered list = it displays in bullet points like dots
+    - In unordered list we can use the "type" attribute to change the shape of the bullet points -->
+    
+    <ul>
+        <li>hi</li>
+        <li>shiva</li>
+        <li>developer</li>
+    </ul>
+    
+    <!-- using type attribute -->
+    <ul>
+        <li type="square">hi</li>
+        <li type="square">shiva</li>
+        <li type="square">developer</li>
+    </ul>
+
+    <ul>
+        <li type="circle">hi</li>
+        <li type="circle">shiva</li>
+        <li type="circle">developer</li>
+    </ul>
+
+
+    <!-- ol = Ordered list = it displays the bullet points in numbers 1,2,3,.... 
+    - In ordered list we can use "type" attribute to change the bullet points
+    "I" = roman numerals like I, II, III, IV,... 
+    "i" = roman numerals like i, ii, iii, iv,... 
+    "a" = lowercase alphabets like a,b,c,d,... 
+    "A" = uppercase alphabets like A,B,C,D,.. -->
+    <ol>
+        <li>hi</li>
+        <li>shiva</li>
+        <li>developer</li>
+    </ol>
+
+    <!-- using type attribute -->
+    <ol>
+        <li type="I">hi</li>
+        <li type="I">shiva</li>
+        <li type="I">developer</li>
+    </ol>
+
+    <ol>
+        <li type="i">hi</li>
+        <li type="i">shiva</li>
+        <li type="i">developer</li>
+        <li type="i">developer</li>   
+    </ol>
+
+    <ol>
+        <li type="a">hi</li>
+        <li type="a">shiva</li>
+        <li type="a">developer</li>
+        <li type="a">developer</li>    
+    </ol>
+
+    <ol>
+        <li type="A">hi</li>
+        <li type="A">shiva</li>
+        <li type="A">developer</li>
+        <li type="A">developer</li>    
+    </ol>
+</body>
+</html>
