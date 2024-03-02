@@ -1,0 +1,27 @@
+#firstdiv{
+    color: rgb(255, 255, 20);
+    background-color: rgb(143, 143, 244);
+}
+
+.class1{
+    color: red;
+    background-color: rgb(145, 255, 145);
+}
+
+.firstclass{
+    color: black;
+    background-color: aquamarine;
+}
+
+.secondclass{
+    color: brown;
+    background-color: chartreuse;
+}
+
+.class2{
+    background-color: rgb(8, 1, 1);
+}
+
+.class3{
+    background-color: chocolate;
+}
