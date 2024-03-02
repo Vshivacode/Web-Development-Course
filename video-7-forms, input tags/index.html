@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="/form.txt">
+        <label for="username">Enter your name:</label>
+        <input type="text" name="username" placeholder="enter your name"><br>
+        
+        <label for="password">Enter your password:</label>
+        <input type="password" name="password" placeholder="Enter your password"><br>
+
+        <input type="radio" name="gender">
+        <label for="gender">Male</label>
+
+        <input type="radio" name="gender">
+        <label for="gender">Female</label><br>
+
+        <input type="checkbox" name="checkbox">
+        <label for="checkbox">Checkbox1</label>
+
+        
+        <input type="checkbox" name="checkbox">
+        <label for="checkbox">Checkbox2</label><br>
+
+        <label for="comments">Enter your comments:</label>
+        <textarea name="comments" cols="20" rows="5" placeholder="Enter comments"></textarea><br>
+
+        <select name="fruits">
+            <option value="apple">apple</option>
+            <option value="orange">orange</option>
+            <option value="banana">banana</option>
+        </select><br>
+
+        <!-- field required -->
+        <label for="email-address">Email:</label>
+        <input type="email" name="email-address" required>
+
+        <!-- patterns those are accepted to enter, and we can set what they can enter -->
+        <label for="userpassword">User-Password:</label>
+        <input type="text" name="userpassword" pattern="[a-zA-Z0-9]+">
+
+        <input type="submit" name="" id="">
+    </form>
+</body>
+</html>
