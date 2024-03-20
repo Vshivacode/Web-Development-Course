@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model - Margin, Padding & Borders</title>
+    <style>
+        .box{
+            background-color: rgb(125, 232, 197);
+        }
+
+        .box1{
+            background-color: red;   /* color only applies to content, padding */
+            padding: 10px;
+            margin: 25px;    /* margin background color does not change */
+            border: 2px solid black;
+            height: 200px;
+            box-sizing: border-box;  /* this means: total height(200px) = content + padding + border */
+        }
+
+
+        /* Margin Collapse: distance between two boxes will be the maximum of margin from both the boxes
+        box1-margin = 25px, box2-margin = 35px 
+        from these two boxes box2 has maximum margin that is 35px
+        so distance from box1bottom-margin + box2top-margin will be = 35px 
+        and remaining sides will be same as margins have 
+        the other 3 sides of box1 = 25px
+        and the other 3 sides of box2 = 35px */
+        .box2{
+            background-color: rgb(255, 191, 0);   /* color only applies to content, padding */
+            padding: 10px;
+            margin: 35px;    /* margin background color does not change */
+            border: 2px solid black;
+            height: 200px;
+            box-sizing: border-box;  /* this means: total height(200px) = content + padding + border */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">i am first box</div>
+    <div class="box box2">i am second box</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Element Selector: selects all the html elements even if we have multiple */
+        div{
+            background-color: red;
+        }
+
+
+        /* Class Selector: it selects according to class attributes and we style the class with dot symbol at starting with class name */
+        .redClass{
+            background-color: yellow;
+        }
+
+
+        /* Id selector: same as class selector but starts with '#' symbol */
+        #greenId{
+            background-color: green;
+        }
+
+
+        /* Child Selector: only you want to apply some color to an html element that is inside an other html element  
+           for ex: we need to change the bg color of paragraph inside a div block 
+           this only applies paragraph inside a div and it does not work in any other block 
+           we write selector with greater than symbol and the other elements */
+        div > p{
+            background-color: pink;
+        }
+
+
+        /* Descendant selector: it applies to all the html elements inside any element not like child selector 
+           we write selector with space between them */
+        h2 p{
+        background-color: rgb(37, 109, 254);
+        }
+
+        
+        /* Universal Selector: this changes applies to all the html elements */
+        * {
+            color:rgb(76, 57, 184)
+        }
+
+
+        /* Pseudo Selector: many are there we will see some of them
+        :visited: the link visited 
+        :hover: Applies styles when the mouse hovers over the element.
+        :active: Applies styles when the element is being activated (e.g., clicked on).
+        :focus: Applies styles when the element has focus.
+        :first-child: Selects an element that is the first child of its parent.
+        :last-child: Selects an element that is the last child of its parent.
+        :nth-child(n): Selects elements based on their position within their parent, where 'n' is a keyword or a formula. */
+        a:visited{
+            color: rgb(183, 249, 28);
+        }
+
+        a:hover{
+            background-color: gold;
+        }
+
+        h6:first-child{
+            background-color: rgb(255, 168, 168);
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <ol>
+        <li>Element Selector</li>
+        <div>
+            i am a div
+        </div>
+        <br>
+
+
+        <li>Class selector</li>
+        <div class="redClass">
+            i am a div, and am using class attribute
+        </div>
+        <br>
+
+
+        <li>Id Selector</li>
+        <div id="greenId">
+            i am a div, and am using class attribute
+        </div>
+        <br>
+
+
+        <li>Child Selector</li>
+        <div>
+            i am a div block
+            <p>i a inside a div block and i am paragraph</p>
+
+            <!-- the color of paragraph wont change because it is in h5 tag not directly in div -->
+            <h5>i am heading tag
+                <p>i am inside the heading tag and i am paragraph</p>
+            </h5>
+        </div>
+
+
+        <li>Descendant Selector</li>
+        <h2>
+            <div>
+                i am a descendant selector in div block 
+                <p>i am in div block and i am a paragraph</p>
+            </div>
+        </h2>
+
+
+        <li>Universal Selector</li>
+        <p>this changes applies to all the html elements</p>
+
+
+        <li>Pseudo Selector</li>
+        <a href="https://www.google.com">Goto Google</a>
+        <a href="https://www.instagram.com">Goto Instagram</a>
+        <div class="first-child">
+            <h6>i am h1, first child</h1>
+        </div>
+    </ol>
+</body>
+
+
+</html>
