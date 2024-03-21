@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity & Cascade</title>
+    <style>
+        /* first priority will be specificity: inline style > id selector > class selector or attribute selector > element selector > universal selector */
+        h1{ /* element selector */
+            color: aqua;
+        }
+
+        #specificityid{ /* id selector */
+            color: aquamarine;
+        }
+
+        .cyellow{   /* class selector */
+            color: yellow;
+        }
+        .cpurple{
+            color: purple;
+        }
+        .cred{
+            color: red;
+        }
+
+        /* to override inline style then we use the '!important' this will be more priority than inline style 
+        using !important */
+        h1{
+            color: coral !important; /* this will override the inline style */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: green;" id="specificityid" class="cred cyellow cpurple">CSS Specificity</h1>
+
+</body>
+</html>
