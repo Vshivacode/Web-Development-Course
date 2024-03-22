@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+    <style>
+        html{   /* html is the root element of a website */
+            font-size: 20px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            box-sizing: border-box;
+            border: 2px solid;
+            background-color: aqua;
+            /* width: 100vw; */
+            margin: auto;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid;
+            background-color: aquamarine;
+            /* height: 80vh; */
+            margin: 20px auto;
+            font-size: 20px;
+            min-height: 80vh;
+            width: 80%;
+        }
+
+        .container div{
+            /*font-size: 2em;*/ /* double of parent size  */
+            /*font-size: 2rem;*/ /* 'r' means 'root': double the size of root element html */
+            border: 2px solid;
+            width: 50%;
+        }
+
+        .container div div {
+            border: 2px solid red;
+            width: 50%;
+
+        }
+
+        .mycontainer{
+            background-color: burlywood;
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        this is a box
+    </div>
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, officiis eligendi, doloribus non dolorum
+            architecto suscipit ea cum modi, et amet itaque beatae!
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aliquam veniam dolorem facere temporibus quia explicabo nesciunt rerum! Facere excepturi doloribus, repudiandae aperiam sint ab quia id sapiente neque nobis doloremque beatae consequatur!
+            </div> 
+            <div>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore impedit harum voluptatem.
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolor, saepe sapiente rem porro assumenda unde harum ex, voluptatum laudantium exercitationem molestiae recusandae minus nam? Provident laborum mollitia odio debitis labore quos eos nam.</p>
+    </div>
+    <div class="mycontainer">
+        <p>this is the another container</p>
+    </div>
+</body>
+
+</html>
