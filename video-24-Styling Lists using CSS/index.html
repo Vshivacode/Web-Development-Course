@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Lists using CSS</title>
+    <style>
+        /* we can select the style to particular tag also 
+        nth-child(2) means it only applies to second element in the ul list */
+        /* nav ul li:nth-child(2){ 
+            list-style: none; 
+        }  */
+
+        nav ul li {
+            box-sizing: border-box;
+            /* list-style: none; */ /* to hide the list items symbols/markers */
+
+            /* list-style: devanagari; */ /* displays in hindi numbers */
+            background-color: yellow;   /* this color only applies to the list items not the symbols/markers */
+            /* to do that we we need to place the list item symbols inside the list items  */
+            list-style-position: inside;
+            border: 2px solid;
+            list-style: '🔥';
+            /* list-style: disc inside url(./icons8-star.gif); */
+            /* list-style-image: url('https://www.icegif.com/wp-content/uploads/2023/08/icegif-828.gif'); */
+            /* display: flex;
+            justify-content: center; */
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+</body>
+</html>
