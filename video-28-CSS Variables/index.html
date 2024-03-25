@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* global variables: written starting with "--" inside the root element */
+        :root{
+            --color: rgb(244, 176, 121);
+            --secondcolor: rgb(161, 161, 241);
+            --defpadding: 20px;
+        }
+        .navbar{
+            background-color: var(--color);
+        }
+        .content{
+            background-color: var(--secondcolor);
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            padding: var(--defpadding); /* using variables */
+        }
+        li:first-child{
+            /* Local variable */
+            /* --color: rgb(136, 224, 192);
+            background-color: var(--color); */
+            /* if there is no such variable then use this color we can set the color
+            here "--thirdcolor"  variable is not there so it taken the mentioned color */
+            background-color: var(--thirdcolor, maroon);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam perferendis tenetur ea fugiat quaerat aspernatur dignissimos, vel repellendus. Autem, illo et quisquam obcaecati expedita natus, inventore officia, provident cumque ducimus ratione dolore aliquid dolorem?</p>
+    </div>
+</body>
+</html>
