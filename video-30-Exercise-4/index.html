@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-4</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* :root{
+            --navbackcolor: yellow;
+            --firstcolor: rgb(147, 147, 233);
+            --seccolor: rgb(44, 243, 44);
+            --thirdcolor: rgb(255, 110, 110);
+            --li-padding: 20px;
+        } */
+
+        :root{
+            --primary-color: rgb(254, 154, 154);
+            --secondary-color: rgb(166, 199, 255);
+            --text-color: rgb(255, 255, 255);
+            --li-padding: 10px;
+        }
+        .navbar{
+            background-color: var(--primary-color);
+        }
+        body{
+            font-family: "Poppins";
+            background-color: var(--secondary-color);
+        }
+        ul{
+            display: flex;
+            /* justify-content: center; */
+        }
+        ul li{
+            font-weight: 600;
+            color: var(--text-color);
+            list-style: none;
+            padding: var(--li-padding);
+        }
+
+        ul li a{
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        /* li:first-child{
+            background-color: var(--firstcolor);
+        }
+        li:nth-child(2){
+            background-color: var(--seccolor);
+        }
+        li:last-child{
+            background-color: var(--thirdcolor);
+        } */
+
+        @media only screen and (max-width:500px){
+            body{
+                ul li{
+                    border: 2px solid black;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
