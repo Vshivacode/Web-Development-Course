@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Selectors </title>
+    <style>
+        /* .box:first-child{
+            background-color: red;
+        } */
+
+        /* .box:first-line{
+            background-color: rgb(255, 149, 0);
+        } */
+
+        .boxes *{
+            border: 2px solid black;
+            color: rgb(128, 6, 0)
+        }
+
+        /* attribute selector */
+        /* [para-attr='paragraph']{
+            background-color: rgb(255, 205, 205);
+        } */
+
+        /* div, p {
+            background-color: rgb(0, 102, 255);
+        } */
+
+        /* .box:nth-last-child(2){
+            /* padding: 23px; */
+            /* color: yellow; */
+      /*} */
+
+        .box:nth-child(odd){
+            background-color: yellow;
+        }
+
+        .boxes::before{
+            content: "i am before the boxes inside the div block";
+            background-color: rgb(185, 255, 185);
+        }
+
+        .boxes::after{
+            content: "i am after the boxes inside the div block";
+            background-color: orange;
+        }
+
+        ::selection{
+            background-color: blue;
+            color: white;
+        }
+
+        .box::first-letter{
+            color: rgb(255, 0, 0);
+            font-size: 30px;
+        }
+
+        input::placeholder{
+            color: rgb(127, 127, 128);
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">
+            hey i am first box
+        </div>
+        <div class="box">
+            i am second box
+        </div>
+        <div class="box">
+            hey i am third box
+        </div>
+        <p para-attr="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda quas dolores consectetur sint recusandae quia sit ab suscipit, asperiores doloribus officiis error consequuntur?</p>
+
+    </div>
+    <label for="Name">Name:</label>
+    <input type="text" name="Name" placeholder="enter your name">
+</body>
+</html>
