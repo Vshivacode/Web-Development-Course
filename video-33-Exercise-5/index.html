@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-5</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            --navbar-bgcolor: rgb(255, 222, 133);
+            --navbar-items-textcolor: black;
+            --card-margin: 20px;
+        }
+        
+        body{
+            font-family: "Poppins";
+            font-weight: 500;
+        }
+
+        header{
+            position: sticky;
+            top: 0;
+        }
+        .navbar{
+            background-color: var(--navbar-bgcolor);
+            
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            display: inline-block;
+            list-style: none;
+            padding: 10px;
+        }
+
+        .bg-box{
+            box-sizing: border-box;
+            background-color: rgb(94, 76, 249);
+            padding: 50px 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .card-1{
+            background-color: rgb(255, 145, 237);
+            width: 400px;
+            height: 800px;
+            margin: var(--card-margin)
+            
+        }
+        .card-2{
+            background-color: rgb(104, 255, 167);
+            width: 400px;
+            height: 400px;
+            margin: var(--card-margin);
+        }
+
+        .welcome-box{
+            border: 2px solid black;
+            margin: 40px 80px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            /* padding: 20px; */
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .popup{
+            text-align: right;
+        }
+        img{
+            position: fixed;
+            top: 450px;
+            right: 10px;
+            bottom: 10px;
+            width: 70px;
+            border-radius: 50px;
+        }
+
+        footer{
+            height: 100%;
+            display: flex;
+            justify-content: center;  
+            background-color: darkseagreen;
+        }
+        .footerclass{
+            height: 40px;
+        }
+        .footerclass p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <div class="bg-box">
+        <div class="card-1">
+            i am card 1
+        </div>
+        <div class="card-2">
+            i am card 2
+        </div>
+    </div>
+    <div class="welcome-box">
+        <h4>welcome to sigma web development course</h4>
+    </div>
+    <div class="popup">
+        <img width="80px" src="https://as1.ftcdn.net/v2/jpg/04/99/79/18/1000_F_499791897_lcl3cbEcL50KPDqmHbSsAwyct2WBcJP0.jpg" alt="">
+    </div>
+    <footer>
+        <div class="footerclass">
+            <p>&copy;codewithshiva</p>
+        </div>
+        
+    </footer>
+</body>
+</html>
