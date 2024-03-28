@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid </title>
+    <style>
+        .container{
+            border: 2px solid red;
+            display: grid;
+            grid-template-areas: "header header header"
+                                 "main main side"
+                                 "footer footer footer"
+    
+
+        }
+
+        .item{
+            height: 60px;
+            margin: 4px;
+            border: 2px solid;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .item-1{
+            grid-area: header;
+            background-color: aquamarine;
+        }
+
+        .item-2{
+            grid-area: main;
+            background-color: rgb(247, 140, 64);
+        }
+
+        .item-3{
+            grid-area: side;
+            background-color: cornflowerblue;
+        }
+
+        .item-4{
+            grid-area: footer;
+            background-color: rgb(240, 98, 127)
+        }
+
+        .item-5{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">Header</div>
+        <div class="item item-2">main</div>
+        <div class="item item-3">side bar</div>
+        <div class="item item-4">footer</div>
+        <div class="item item-5">5</div>
+        
+    </div>
+</body>
+</html>
