@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox </title>
+    <style>
+        .container{
+            border: 2px solid red;
+            display: flex;
+            height: 80vh;
+            justify-content: center;    /* align items center horizontally */
+            align-items: center;    /* align items center vertically we use this if there is only items are in single line if they are displaying in two or more lines we use " align-content: center " */ 
+            /* flex-direction: column; */    /* align items in column wise */
+            /* flex-direction: column-reverse; */    /* reverse column wise */
+            /* flex-direction: row; */       /* align in row wise */
+            /* flex-direction: row; */    /* reverse row wise */
+            flex-wrap: wrap;    /* wraps down if there are more */
+            /* align-content: center;  this will align all the items in center vertically if they are displaying more than single line */
+            /* flex-flow: row wrap-reverse; */
+            /* gap: 60px; */ /* this provides a space between the items and not around the items */
+            /* we can give row gap and column gap also seperately */
+            row-gap: 150px; /* it gives gap between the items only not around the items */
+            column-gap: 2px;
+            /* or we can do this in single line also */
+            gap: /*row-gap*/150px  /*column-gap*/2px;
+
+        }
+
+        .item{
+            height: 80px;
+            width: 80px;
+            background-color: purple;
+            border: 2px solid black;
+            /* margin: 4px; */
+            color: white;
+        }
+
+        .item-6{
+            height: 80px;
+            width: 80px;
+            background-color: purple;
+            border: 2px solid black;
+            /* margin: 4px; */
+            color: white;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item-6">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+        </div>
+    </main>
+</body>
+</html>
