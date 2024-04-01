@@ -1,105 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise-7</title>
     <style>
-        .box{
-            border: 2px solid;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "poppins";
+        }
+
+        nav {
+            /* border: 2px solid; */
+            background-color: aliceblue;
             display: flex;
+            justify-content: center;
+            gap: 300px;
+        }
+
+        .menu-items {
+            list-style: none;
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+        }
+
+        .menu-items li {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 140px;
+            mix-blend-mode: multiply;
+        }
+
+        .web-title {
+            margin: 80px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        .box ul{
+
+        .web-title span {
+            font-size: 44px;
+            font-weight: bold;
+        }
+
+        .web-title img {
+            width: 100px;
+        }
+
+        .web-title p {
+            max-width: 60vw;
+            margin: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .web-title a {
+            text-decoration: none;
+            background-color: #00b6d1;
+            padding: 16px 20px;
+            border: 0px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .subtitle{
+            font-size: 26px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .small{
+            font-size: 14px;
+        }
+        /* .container {
+            margin: 20px 20px;
+            border: 2px sdivid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        .second{
+            max-width: 80vw;
+            margin: auto;
+        }
+        
+        .grid{
             display: grid;
-            grid-template-columns: 100px 100px 100px;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 50px;
-           
+            gap: 36px;
+            text-align: center;
         }
 
-        .box ul li{
-            border: 2px solid red;
-            list-style: none;
-            
-
+        .item{
+            background-color: #f9f9f9;
+            border-radius: 8px;            
         }
+
+
+        /* .item a{
+            font-size: 12px;
+            background-cdivor: rgb(255, 225, 127);
+            display: grid;
+            grid-template-cdivumns: 1fr 1fr;
+            gap: 20px;
+        } */
+        .item-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .title1 {
+            margin-bottom: 66px;
+        }
+
+        .item-title p {
+            font-weight: 300;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .item-btn {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 10px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .item-first-button {
+            background-color: #00b6d1;
+            font-weight: bdivd;
+            font-size: 12px;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .item-second-button {
+            background-color: #5cb85c;
+            font-weight: bdivd;
+            font-size: 12px;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="box">
-            <ul>
-                <li>English
-                    <!-- <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>Deutsch
-                    <!-- <ol>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./download-logo.jpeg" alt="logo">
+            </div>
+            <div class="menu-items">
+                <li>Products <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                    </svg></li>
+                <li>Pricing <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                    </svg></li>
+                <li>Resources <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                    </svg></li>
+                <li>About us <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                    </svg></li>
+                <li>Security and compliance <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                    </svg></li>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="web-title">
+                <span>Download UltraEdit for Windows
+                    <img src="https://www.ultraedit.com/wp-content/uploads/2022/10/Reviews.png" alt=""></span>
+                <p>Download and try UltraEdit before you buy it! This download includes the full Windows version of the
+                    text editor.</p>
+                <a href="https://www.ultraedit.com/downloads/uex-thank-you/">DOWNLOAD MAC OR LINUX VERSION</a>
+            </div>
+        </section>
+
+
+        <section class="second">
+            <div class="subtitle">
+                <img width="60px" src="https://yt3.googleusercontent.com/wzmNcTLT_uRGi1j6-oEIp6NAusTVQbmqOdDk1IggAq_tx31XH00ikblZwtTMNwUCrPDAYvZqQA0=s176-c-k-c0x00ffffff-no-rj" alt="">
+                <span>Download UltraEdit</span>
+                <span class="small">v2023.2(released 2023/12/15) | Hotfix</span>
+            </div>
+            
+            <div class="grid">
+                <div class="item">
+                    <div class="item-title title1">
+                        <h4>English</h4>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>Deutsch</h4>
                         <p>German</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>Italiano
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>Italiano</h4>
                         <p>Italian</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>Español
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>Españdiv</h4>
                         <p>Spanish</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>français
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>français</h4>
                         <p>French</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>Português brasileiro
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>Português brasileiro</h4>
                         <p>Brazilian Portuguese</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>日本
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>日本</h4>
                         <p>Japanese</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>한국어
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>한국어</h4>
                         <p>Korean</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>中国
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>中国</h4>
                         <p>Chinese</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-                <li>中國
-                    <!-- <ol>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <h4>中國</h4>
                         <p>Traditional Chinese</p>
-                    </ol>
-                    <a href="ue_english.exe">Download 32-bit</a>
-                    <a href="ue_english.exe">Download 64-bit</a> -->
-                </li>
-            </ul>
+                    </div>
+                    <div class="item-btn">
+                        <a class="item-first-button" href="ue_english.exe">Download 32-bit</a>
+                        <a class="item-second-button" href="ue_english.exe">Download 64-bit</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+        </section>
+        
+    </main>
 </body>
+
 </html>
