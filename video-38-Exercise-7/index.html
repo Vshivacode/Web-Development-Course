@@ -22,7 +22,7 @@
             background-color: aliceblue;
             display: flex;
             justify-content: center;
-            gap: 300px;
+            /* gap: 300px; */
         }
 
         .menu-items {
@@ -88,6 +88,7 @@
 
         .small{
             font-size: 14px;
+            margin-top: 8px;
         }
         /* .container {
             margin: 20px 20px;
@@ -139,34 +140,102 @@
         }
 
         .item-btn {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             gap: 20px;
             padding: 10px;
             margin-top: 40px;
             margin-bottom: 10px;
+
+            /* use this to show some clickable cursor on any element */
+            /* cursor: pointer; */
+
         }
 
         .item-first-button {
             background-color: #00b6d1;
-            font-weight: bdivd;
+            font-weight: bold;
             font-size: 12px;
             color: white;
             padding: 10px;
             border-radius: 6px;
             text-decoration: none;
+            margin: 5px;
         }
 
         .item-second-button {
             background-color: #5cb85c;
-            font-weight: bdivd;
+            font-weight: bold;
             font-size: 12px;
             color: white;
             padding: 10px;
             border-radius: 6px;
             text-decoration: none;
+            margin: 5px;
         }
         
+        @media screen and (max-width: 1180px) {
+            .item-title{
+                margin: 20px;
+            }
+
+            .title1{
+                margin-top: 20px;
+                margin-bottom: 46px;
+            }
+
+            .item-btn{
+                display: grid;
+                gap: 10px;
+                margin: 20px;
+            }
+
+            .item-first-button{
+                margin: 0px;
+            }
+
+            .item-second-button{
+                margin: 0px;
+            }
+        }
+
+        @media screen and (max-width: 930px) {
+            main{
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }            
+        }
+
+        @media screen and (max-width: 781px) {
+            .grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            
+        }
+
+        @media screen and (max-width: 506px) {
+            .grid{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            
+        }
+
+        @media screen and (min-width: 1600px) {
+            .grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            
+        }
+
+        @media screen and (min-width: 2160px) {
+            .grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            }
+            
+        }
     </style>
 </head>
 
@@ -196,7 +265,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section class="first">
             <div class="web-title">
                 <span>Download UltraEdit for Windows
                     <img src="https://www.ultraedit.com/wp-content/uploads/2022/10/Reviews.png" alt=""></span>
