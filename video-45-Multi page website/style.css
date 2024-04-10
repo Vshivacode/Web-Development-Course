@@ -10,7 +10,7 @@ body{
 }
 
 nav{
-    background-color: bisque;
+    background-color: rgba(249, 243, 235, 1.0);
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,11 @@ nav{
     display: flex;
     gap: 30px;
     font-weight: bold;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
 }
 
 .booking{
@@ -44,4 +49,65 @@ nav{
     font-weight: bold;
     font-size: 16px;
     background: transparent;
+}
+
+
+.hero{
+    background-color: rgba(249, 243, 235, 1.0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    background-color: rgba(249, 243, 235, 1.0);
+}
+
+.section{
+    background-color: rgba(249, 243, 235, 1.0);
+    height: auto;
+    
+}
+
+img, svg{
+    vertical-align: middle;
+}
+
+.container button{
+    padding: 19px 40px;
+    border-radius: 30px;
+    background-color: rgba(244, 49, 39, 1.0);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 30px 35px rgba(255, 0, 0, 0.2);
+    margin-top: 26px;
+}
+
+.container{
+    display: flex;
+    padding: 40px;
+    align-items: center;
+    gap: 200px;
+}
+
+.hero-text p{
+    color: red;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-text h1{
+    font-size: 60px;
+    line-height: 80px;
+}
+
+.hero-text span{
+    color: red;
+}
+
+.hero-img img{
+    height: 36vw;
 }
