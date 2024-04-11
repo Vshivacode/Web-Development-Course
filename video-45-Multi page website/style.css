@@ -16,6 +16,12 @@ nav{
     justify-content: space-between;
     padding: 2px 20px;
     align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 2s cubic-bezier(0.18,-0.01, 0, 0.96);
+    z-index: 3;
 }
 
 .menu{
@@ -52,18 +58,20 @@ nav{
 }
 
 
-.hero{
+.hero-section{
     background-color: rgba(249, 243, 235, 1.0);
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+    /* top: 100px; */
 }
 
 .container{
     background-color: rgba(249, 243, 235, 1.0);
 }
 
-.section{
+.design{
     background-color: rgba(249, 243, 235, 1.0);
     height: auto;
     
@@ -111,3 +119,310 @@ img, svg{
 .hero-img img{
     height: 36vw;
 }
+
+.section-features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0;
+}
+
+h6{
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+h2{
+    font-size: 40px;
+}
+.features-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    margin: 0 60px; 
+    gap: 40px;
+    padding: 50px 0;
+    /* border: 2px solid red; */
+}
+
+.grid-item{
+    border-radius: 20px;
+}
+
+.grid-item svg{
+    padding: 40px 0 30px 0;
+}
+
+.grid-item h4{
+    padding: 10px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.grid-item p{
+    padding: 10px 0 40px 0;
+    color: gray;
+}
+
+.grid-item-1{
+    background-color: rgba(255, 238, 235, 1.0);
+    padding: 0px 30px;
+}
+
+.grid-item-2{
+    background-color: rgba(246, 242, 255, 1.0);
+    padding: 0px 30px;
+}
+
+.grid-item-3{
+    background-color: rgba(255, 242, 221, 1.0);
+    padding: 0px 30px;
+}
+
+.grid-item-4{
+    background-color: rgba(239, 251, 242, 1.0);
+    padding: 0px 30px;
+}
+
+
+
+
+
+
+.section-deals{
+    background-color: rgba(249, 243, 235, 1.0);
+    padding: 130px 0;
+}
+
+.section-deals-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9vh;
+}
+
+.deals {
+    display: flex;
+    list-style: none;
+    margin: 0 10vw 9vh 10vw;
+    gap: 20px;
+    justify-content: center;
+}
+
+.deals a{
+    text-decoration: none;
+}
+
+.deals img{
+    padding: 8px;
+    background-color: rgba(249, 243, 235, 1.0);
+    border-radius: 25px;
+}
+
+.deals-title{
+    /* border: 2px solid red; */
+    background-color: white;
+    display: flex;
+    border-radius: 38px;
+    padding: 8px 18px 8px 8px;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.deals-title a{
+    color: black;
+}
+
+.deals-title:hover{
+    background-color: red;
+}
+
+.deals-title:hover a{
+    color: white;
+}
+
+.deals-card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-details {
+    background-color: white;
+    margin: 0 27vw;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px;
+    gap: 25px;
+}
+
+.img-container {
+    overflow: hidden;
+    width: 145px;
+    border-radius: 20px;
+
+}
+
+.deals-img:hover{
+    transform: scale(1.12);
+}
+
+
+.desc-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-details .desc-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-details .desc .price{
+    color: red;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.card-details .desc p {
+    color: gray;
+}
+
+
+
+
+
+.section-popular-items{
+    padding: 100px 0;
+    text-align: center;
+}
+
+.popular-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px 60px;
+    column-gap: 40px;
+}
+
+.popular-card-1{
+    background-color: rgba(249, 243, 235, 1.0);
+    padding: 40px 0;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.popular-card-1 h5{
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+.popular-card-1 span{
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.popular-img:hover{
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+.section-professional{
+    padding: 100px 0;
+    background-color: rgba(249, 243, 235, 1.0);
+}
+
+.section-professional-title{
+    text-align: center;
+}
+
+.professional-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px 60px;
+    column-gap: 40px;
+    
+}
+
+.professional-card-1{
+    background-color: white;
+    padding: 15px 15px 15px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.professional-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.professional-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    border-radius: 10px;
+}
+
+.professional-card-1 h5{
+    padding: 25px 0px 0 20px;
+    font-size: 20px;
+}
+
+.professional-card-1 span{
+    color: gray;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+}
+
+.professional-img:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay on hover */
+}
+
+
+.social-icons {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hide initially */
+}
+
+.professional-card-1:hover .social-icons {
+    display: flex;
+    color: white;
+}
+
+.social-icons a {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 16px 20px;
+    margin: 5px;
+    text-decoration: none;
+    display: flex;
+    width: 10px;
+    border: none;
+    border-radius: 25px;
+}
+
