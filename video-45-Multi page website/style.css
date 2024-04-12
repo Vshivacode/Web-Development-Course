@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --website-bg-color: rgba(249, 243, 235, 1.0);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +13,7 @@ body{
     font-family: "poppins";
 }
 
-nav{
+.section-nav{
     background-color: rgba(249, 243, 235, 1.0);
     height: 100px;
     display: flex;
@@ -22,6 +26,7 @@ nav{
     box-sizing: border-box;
     transition: all 2s cubic-bezier(0.18,-0.01, 0, 0.96);
     z-index: 3;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.137);
 }
 
 .menu{
@@ -71,9 +76,10 @@ nav{
     background-color: rgba(249, 243, 235, 1.0);
 }
 
-.design{
+.design-hero-section{
     background-color: rgba(249, 243, 235, 1.0);
     height: auto;
+    fill: white;
     
 }
 
@@ -373,17 +379,27 @@ h2{
     position: relative;
 }
 
-.professional-img::before {
+
+                            /* READ THIS  */
+/* to make a smooth animation when hover we need to use 
+1. ::before - we write all the properties and with transition inside this only
+2. next we need to use :hover::before - in this we add just background color 
+   because of using this two we create a smooth animation 
+   using only :hover::before and including what all we want we can do 
+   but the smooth animation wont work thats why we created two things  */
+.professional-img::before{
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
-    transition: background-color 0.3s ease; /* Smooth transition */
     border-radius: 10px;
+    transition: all 0.4s ease;
 }
+
+.professional-img:hover::before{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 .professional-card-1 h5{
     padding: 25px 0px 0 20px;
@@ -396,33 +412,354 @@ h2{
     font-size: 20px;
 }
 
-.professional-img:hover::before {
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay on hover */
-}
-
-
-.social-icons {
+.social-icons{
     position: absolute;
-    top: 90%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none; /* Hide initially */
+    display: flex;
+    align-items: center;
+    opacity: 0;  /* Start fully transparent */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;  /* Smooth transition for transform and opacity */
+
 }
 
-.professional-card-1:hover .social-icons {
-    display: flex;
-    color: white;
+.professional-card-1:hover .social-icons{
+    transform: translate(-50%, -50%);
+    opacity: 1;
 }
 
 .social-icons a {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.55);
-    padding: 16px 20px;
+    fill: white;
+    background-color: rgba(175, 173, 173, 0.326);
+    padding: 14px;
     margin: 5px;
     text-decoration: none;
     display: flex;
-    width: 10px;
+    width: 14px;
     border: none;
     border-radius: 25px;
+    transition: background-color 0.3s;
+
 }
 
+.social-icons a:hover {
+    background-color: white;
+    fill: red;
+}
+
+.social-icons a:first-child{
+    width: 10px;
+    padding: 13px 16.5px;
+}
+
+
+
+
+
+
+/* section gallery */
+.section-gallery{
+    padding: 100px 0;
+}
+
+.section-gallery-title{
+    text-align: center;
+    padding: 0 0 40px 0;
+}
+
+.first-row{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin: 0 40px;
+}
+
+.second-row{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    margin: 0 40px;
+}
+
+.grid-gallery li{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+/* section services logos */
+.service-logos{
+    margin: 40px 0 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.service-logos img{
+    filter: grayscale(100%);
+    padding: 0 20px 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.service-logos img:hover{
+    filter: grayscale(0);
+}
+
+
+
+
+
+
+
+/* Reviews section */
+.section-reviews{
+    background-color: rgba(249, 243, 235, 1.0);
+    padding: 100px 0;
+}
+
+.section-reviews-title{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.review-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 30px;
+    padding: 0 30px;
+}
+
+.review-card-1{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 26vw;
+    padding: 20px 25px;
+    border-radius: 10px;
+}
+
+.review-ratings{
+    display: flex;
+    width: 100px;
+    height: 50px;
+}
+
+.review-ratings svg{
+    fill: rgba(255,161,31,1.0);
+}
+
+.review-info{
+    color: gray;
+    padding: 30px 0;
+}
+
+.review-person-info{
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+/* section blog */
+.section-blog-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 40px;
+}
+
+.img-date{
+    color: white;
+    text-align: center;
+    background-color: rgba(252, 179, 2, 1.0);
+    position: absolute;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px 0 0 20px;
+    z-index: 2;   
+}
+
+.img-date span{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.img-date h5{
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.blog-card-info{
+    position: relative;
+    background-color: white;
+    top: 200px;
+    width: 75%;
+    left: 20px;
+    padding: 20px;
+    box-shadow: rgba(128, 128, 128, 0.42) 2px 4px 30px;
+    border-radius: 6px;
+}
+
+.blog-card-info span:first-child{
+    margin: 0 30px 0 0;
+}
+
+.blog-card-info h4{
+    font-size: 20px;
+    padding: 18px 0;
+    font-weight: 600;
+}
+
+.blog-card-info a{
+    text-decoration: none;
+    color: red;
+}
+
+
+.blog-img-container{
+    position: absolute;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+
+.blog-img {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.blog-card-1:hover .blog-img {
+    transform: scale(1.12); /* Scale up on hover */
+ } 
+
+ .section-blog{
+    padding: 130px 0 50vh 0;
+ }
+
+ .section-blog-title{
+    text-align: center;
+    padding: 0 0 40px 0;
+ }
+
+
+
+
+
+ /* section subscribe */
+ .section-subscribe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    gap: 40px;
+    padding: 100px 0;
+ }
+
+ .subscribe-svg{
+    padding: 30px;
+    background-color: red;
+    border-radius: 100%;
+    box-shadow: 0px 30px 35px rgba(255, 0, 0, 0.205);
+ }
+
+ .subscribe-title{
+    text-align: center;
+    max-width: 50vw;
+ }
+
+ .subscribe-input{
+    padding: 20px 200px 20px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.279);
+    font-size: 16px;
+    color: gray;
+ }
+
+
+ .subscribe-btn{
+    padding: 18px 40px;
+    border-radius: 50px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 6px;
+ }
+
+
+
+
+
+
+/* footer section  */
+.section-footer{
+    background-color: rgba(249, 243, 235, 1.0);
+}
+
+.design-footer-section{
+    background-color: white;
+    height: auto;
+    fill: var(--website-bg-color);
+}
+
+.footer-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    padding: 100px 0px;
+    max-width: 90vw;
+    margin: auto;
+}
+
+.footer-info li{
+    color: gray;
+    padding: 10px 0;
+}
+
+.footer-info-first img{
+    padding: 10px 0 20px 0;
+}
+.footer-info-second h5{
+    padding: 10px 0 30px 0;
+    font-size: 20px;
+}
+
+
+.copyright-and-social-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 0, 0, 0.183);
+    padding: 5px 50px;
+    color: gray;
+}
+
+.footer-social-icons{
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-icons svg{
+    width: 15px;
+    padding: 10px 20px;
+    fill: rgba(0, 0, 0, 0.388);
+}
+
+.footer-social-icon-1 svg{
+    width: 10px;
+    padding: 10px;
+}
+
+.footer-social-icons svg:hover{
+    fill: red;
+}
