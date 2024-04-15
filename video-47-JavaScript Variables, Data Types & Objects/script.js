@@ -59,4 +59,79 @@ const q = " shiva ";
 // in vs code it wont show the red underline at console it gives error
 // p = 300;
 
-console.log(p + q)
+// console.log(p + q)
+
+
+
+
+// we use "let" instead of "var" because 
+// var is a global scope so the value will be used entire code and within the block of code AudioScheduledSourceNode
+// so when we want to use some variable that is only used within block of code then we use let in that case 
+
+// let a1 = "shiva"
+
+// {
+//     let a1 = "prasad"
+//     console.log(a1)
+// }
+
+// console.log(a1)
+
+// final output: prasad shiva
+
+
+
+// lets use var
+
+// var b1 = "shiva"
+
+// {
+//     var b1 = "prasad"
+//     console.log(b1)
+// }
+
+// console.log(b1)
+
+// final output: prasad prasad 
+
+
+
+
+
+let p1 = "shiva"
+let p2 = 234
+let p3 = null
+let p4 = true
+let p5 = undefined
+let p6 = 2.9
+
+console.log(p1, p2, p3, p4, p5, p6)
+console.log(typeof p1, typeof p2, typeof p3, typeof p4, typeof p5, typeof p6)
+
+
+
+
+
+
+// how to create an object 
+
+let obj = {
+    "name": "shiva",
+    "job role": "developer",
+    "age": 234,
+}
+
+
+console.log(obj)
+
+
+// adding one more key-value pair to an Object
+
+obj.salary = "100cr";
+console.log(obj)
+
+
+
+// changing the value of a key 
+obj.salary = "500cr";
+console.log(obj)
