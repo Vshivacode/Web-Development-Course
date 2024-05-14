@@ -168,7 +168,7 @@ console.log(v2)
     let v3 = "prasad"
     console.log(v3 + " i am inside the block, i am block scope variable ")
 }
-console.log(v3)     // o/p: Error: v3 is not defined
+// console.log(v3)     // o/p: Error: v3 is not defined
 
 
 
@@ -179,4 +179,42 @@ console.log(v3)     // o/p: Error: v3 is not defined
 
 
 // Hoisting
-// 
+// in this the variables and functions declarations are moved to the top
+// means we declare them before the function and before intializing and assigning the variables
+// using "var" we can perform hoisting 
+
+// Note: only declarations are hoisted not the initializations and assignings
+let s1 = "shiva"    // here we assigned the "shiva" to a variable s1
+console.log(s1 + " using 'let'")     // o/p: shiva
+
+
+// now we do with var
+var s2 = "prasad"
+console.log(s2 + " using 'var'")    // o/p: prasad
+
+
+// now we do hoisting with var 
+// we are printing the s3 variable before intializing and declaring
+console.log(s3)     // o/p: undefined
+var s3;     // here we are just declaring the variable which we did not initialized or assigned 
+
+
+// but if we do the same with 'let' and 'const'
+// console.log(s4)   // o/p: Error: Cannot access 's4' before initialization
+let s4;             
+
+
+// console.log(s5)   // o/p: Error: Cannot access 's5' before initialization
+const s5 = 2
+
+
+
+// we can do with functions also 
+// we can call the function before creating
+sayhello()
+function sayhello(){
+    console.log("hello shiva")
+}       // o/p: hello shiva
+
+
+sayhello()      // o/p: hello shiva
