@@ -1,0 +1,31 @@
+.border{
+    border: 2px solid red;
+}
+
+.bg-color{
+    background-color: black;
+}
+
+.bg-grey{
+    background-color: rgb(26, 26, 26);
+}
+
+.flex{
+    display: flex;
+}
+
+.margin{
+    margin: 4px;
+}
+
+.rounded{
+    border-radius: 8px;
+}
+
+.invert{
+    filter: invert();
+}
+
+.padding{
+    padding: 20px;
+}
