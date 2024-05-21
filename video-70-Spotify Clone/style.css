@@ -15,24 +15,28 @@ body{
     width: 23vw;
 }
 
-.right{
-    width: 77vw;
-}
 
 .home-box ul li{
     list-style: none;
-    width: 24px;
+    width: 20px;
     display: flex;
     align-items: center;
     font-weight: 600;
     gap: 15px;
     padding-top: 18px;
+    font-size: 12px;
 }
 
 .library-box{
+    min-height: 80vh;
+    position: relative;
+    padding: 10px;
+}
+.library{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 10px;
 }
 
 .library-title {
@@ -52,4 +56,228 @@ body{
     border-radius: 25px;
     background-color: rgb(48, 48, 48);
     padding: 5px;
+}
+
+.left-footer{
+    bottom: 0px;
+    position: absolute;
+    padding: 5px 0px 30px 10px;
+}
+
+.left-footer a{
+    padding: 0px 16px 0px 0px;
+    text-decoration: none;
+    color: rgb(165, 165, 165);
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.left-playlist{
+    background-color: rgb(48, 48, 48);
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.left-playlist h5{
+    font-size: 12px;
+    
+}
+
+.left-playlist p{
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.left-playlist button{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    padding: 8px 16px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.left-playlist button:hover{
+    transform: scale(1.05);
+}
+
+.language {
+    background-color: rgba(173, 173, 173, 0);
+    color: white;
+    border-radius: 25px;
+    padding: 6px 12px;
+    border: 1px solid white;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.language:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+/* Right side starts here */
+.right{
+    width: 77vw;
+    background-color: rgb(12, 12, 12);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #101010;
+}
+
+.arrows{
+    row-gap: 10px;
+}
+
+.arrows img{
+    width: 14px;
+    padding: 6px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.signup{
+    background-color: rgba(173, 173, 173, 0);
+    color: rgb(148, 148, 148);
+    padding: 6px 12px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup:hover{
+    transform: scale(1.08);
+    color: white;
+}
+
+.login{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    padding: 12px 24px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login:hover{
+    transform: scale(1.08);
+}
+
+.playlists{
+    padding: 20px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.playlist-header h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.playlist-header a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* first playlist - artists  */
+.popular-artists .card img{
+    border-radius: 100px;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+
+/* Remaining playlists */
+.cards-container{
+    display: flex;
+}
+
+.playlist-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.playlist-header a{
+    text-decoration: none;
+    color: rgb(193, 193, 193);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.card{
+    padding: 12px;
+    width: 180px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.card p{
+    font-size: 12px;
+    color: rgb(139, 139, 139);
+}
+
+.card:hover{
+    background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+}
+
+.card .play-button{
+    display: none;
+    transition: all 1s ease-out;
+    top: 140px;
+    cursor: pointer;
+}
+
+.card:hover .play-button{
+    display: block;
+    position: absolute;
+    width: 50px;
+    top: 126px;
+    right: 14px;
+    animation: pop-up 0.5s forwards; /* Apply pop-up animation when hovering over the play button */
+}
+
+/* Keyframes for pop-up animation */
+@keyframes pop-up {
+    0% {
+        transform: translateY(25%); /* Start below the card */
+    }
+    100% {
+        transform: translateY(0%); /* Move up to its final position */
+    }
+}
+
+
+.play-button img:hover{
+    transform: scale(1.08);
 }
