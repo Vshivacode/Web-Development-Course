@@ -72,6 +72,10 @@ body{
     font-weight: normal;
 }
 
+.left-footer .cookies:hover{
+    text-decoration: underline;
+}
+
 .left-playlist{
     background-color: rgb(48, 48, 48);
     padding: 14px;
@@ -128,6 +132,8 @@ body{
 .right{
     width: 77vw;
     background-color: rgb(12, 12, 12);
+    position: relative;             /* this is for playbar */
+    padding: 10px;
 }
 
 .header{
@@ -251,19 +257,19 @@ body{
     border-radius: 10px;
 }
 
-.card .play-button{
+.card .card-play-button{
     display: none;
     transition: all 1s ease-out;
     top: 140px;
     cursor: pointer;
 }
 
-.card:hover .play-button{
+.card:hover .card-play-button{
     display: block;
     position: absolute;
     width: 50px;
     top: 126px;
-    right: 14px;
+    right: 20px;
     animation: pop-up 0.5s forwards; /* Apply pop-up animation when hovering over the play button */
 }
 
@@ -278,6 +284,31 @@ body{
 }
 
 
-.play-button img:hover{
+.card-play-button img:hover{
     transform: scale(1.08);
 }
+
+
+
+
+
+
+/* playbar starts here  */
+.playbar{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    border: 2px solid red;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1121;
+}
+
+.playsong{
+    display: flex;
+    gap: 20px;
+}
+
