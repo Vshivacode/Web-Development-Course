@@ -14,10 +14,6 @@
     display: flex;
 }
 
-.m-6{
-    margin: 6px;
-}
-
 .rounded{
     border-radius: 8px;
 }
