@@ -103,14 +103,41 @@ body{
 /* your songs list  */
 .songs-list-box{
     min-height: 56vh;
-    position: relative;
     padding: 10px;
     margin: 14px 6px;
 }
 
-.songlist{
-    /* background-color: rgb(255, 18, 18); */
-    
+.songlist ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0px;
+    overflow: auto;
+    height: 300px;
+}
+
+.songlist ul::-webkit-scrollbar{
+    width: 4px;
+}
+
+.songlist ul::-webkit-scrollbar-track{
+    background: rgb(69, 69, 69);
+}
+
+.songlist ul::-webkit-scrollbar-thumb{
+    background: rgb(128, 128, 128);
+}
+
+.songlist ul li{
+    display: flex;
+    background-color: rgb(48, 48, 48); 
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 16px;
+    max-width: 88%;
 }
 
 .songs-section-title{
@@ -119,50 +146,35 @@ body{
     color: rgb(173, 173, 173);
 }
 
-.songlist-info{
-    /* background-color: rgb(48, 48, 48);  */
+.songlist p{
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
+
 }
-
-.songlist-info h5 {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    /* background-color: rgb(48, 48, 48); */
-    border-radius: 14px;
-    gap: 20px;
-}
-
-
 
 .your-songs-card{
     display: flex;
     gap: 12px;
-    /* background-color: rgb(26, 26, 26); */
-    /* background-color: rgb(48, 48, 48);  */
+    align-items: center;
     
 }
 
-.songlist-info li{
-    list-style: none;
+.songlist-info{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    border-radius: 14px;
-    /* background-color: rgb(48, 48, 48); */
-    border: 2px solid white;
 }
 
 .songlist img{
     cursor: pointer;
     width: 30px;
-    /* background-color: rgb(48, 48, 48); */
 }
 
 
 
 /* left - footer starts here  */
 .left-footer{
-    /* bottom: 0px; */
     position: absolute;
     padding: 5px 0px 30px 10px;
     background-color: rgb(48, 48, 48);
@@ -374,16 +386,51 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 0;
+    flex-direction: column;
+    padding: 10px 0;
     border: 2px solid red;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    z-index: 1121;
+    width: 99%;
+    /* gap: 20px; */
+    height: 72px;
+}
+
+.song-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
 }
 
 .playsong{
     display: flex;
     gap: 20px;
 }
+
+.playsong img{
+    cursor: pointer;
+}
+
+.seekbar{
+    height: 5px;
+    width: 38%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: rgb(95, 95, 95);
+}
+
+.circle{
+    background-color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 25px;
+    position: absolute;
+    left: -4px;
+    transition: left 0.5s;
+}
+
+
 
