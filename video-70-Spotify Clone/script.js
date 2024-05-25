@@ -1,5 +1,5 @@
 async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/video-70-Spotify%20Clone/songs")
+    let a = await fetch("http://127.0.0.1:3002/video-70-Spotify%20Clone/songs/")
 
     // here a.text() is used to display the code in html format
     // we are using this because we want the links of the songs so that we can play
@@ -69,7 +69,7 @@ async function playSongs() {
     // then it gives "undefined" 
     // but if we have one or more li tags then we can access that element 
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]  // o/p: <h5>Song Name</h5>
-    // console.log(songh5)
+    // console.log(songUL)
 
     //lets get all the song names, since it is a array we use forof loop
     for (const song of songs) {
@@ -117,7 +117,33 @@ async function playSongs() {
             
         }
     });
- 
+
+
+
+
+    function formatTime(timeInSeconds) {
+        // Convert the floating-point seconds to an integer number of seconds
+        const totalSeconds = Math.floor(timeInSeconds);
+        
+        // Calculate the minutes and the remaining seconds
+        const minutes = Math.floor(totalSeconds / 60);
+        const remainingSeconds = totalSeconds % 60;
+        
+        // Pad the minutes and seconds with leading zeros if necessary
+        const paddedMinutes = String(minutes).padStart(2, '0');
+        const paddedSeconds = String(remainingSeconds).padStart(2, '0');
+        
+        // Return the formatted string
+        return `${paddedMinutes}:${paddedSeconds}`;
+    }
+
+
+    // Listen for time update 
+    currentSong.addEventListener("timeupdate", ()=>{
+        document.querySelector(".songtime").innerHTML = innerHTML +
+        console.log(formatTime(currentSong.currentTime), formatTime(currentSong.duration))
+    })
+
 }  
 
 playSongs()
