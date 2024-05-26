@@ -1,5 +1,5 @@
 async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3002/video-70-Spotify%20Clone/songs/")
+    let a = await fetch("http://127.0.0.1:3000/video-70-Spotify%20Clone/songs/")
 
     // here a.text() is used to display the code in html format
     // we are using this because we want the links of the songs so that we can play
@@ -48,9 +48,31 @@ const playMusic = (track)=>{
     // this is for displaying the song info of current playing song
     document.querySelector(".song-title").innerHTML = track
     document.querySelector(".song-time").innerHTML = "00:00/00:00"
+
+    currentSong.addEventListener("loadedmetadata", () => {
+        if (!isNaN(currentSong.duration)) {
+            document.querySelector(".song-time").innerHTML = `00:00/${formatTime(currentSong.duration)}`;
+        }
+   });
     
 }
 
+
+function formatTime(timeInSeconds) {
+    // Convert the floating-point seconds to an integer number of seconds
+    const totalSeconds = Math.floor(timeInSeconds);
+    
+    // Calculate the minutes and the remaining seconds
+    const minutes = Math.floor(totalSeconds / 60);
+    const remainingSeconds = totalSeconds % 60;
+    
+    // Pad the minutes and seconds with leading zeros if necessary
+    const paddedMinutes = String(minutes).padStart(2, '0');
+    const paddedSeconds = String(remainingSeconds).padStart(2, '0');
+    
+    // Return the formatted string
+    return `${paddedMinutes}:${paddedSeconds}`;
+}
 
 
 // now lets create another function to display the getsongs function 
@@ -96,7 +118,7 @@ async function playSongs() {
     
     // Attach an event listener to each song in songlist 
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", element=>{
+        e.addEventListener("click", ()=>{
             console.log(e.querySelector(".songlist-info").firstElementChild.innerHTML)
             playMusic(e.querySelector(".songlist-info").firstElementChild.innerHTML.trim())
         })
@@ -121,29 +143,25 @@ async function playSongs() {
 
 
 
-    function formatTime(timeInSeconds) {
-        // Convert the floating-point seconds to an integer number of seconds
-        const totalSeconds = Math.floor(timeInSeconds);
-        
-        // Calculate the minutes and the remaining seconds
-        const minutes = Math.floor(totalSeconds / 60);
-        const remainingSeconds = totalSeconds % 60;
-        
-        // Pad the minutes and seconds with leading zeros if necessary
-        const paddedMinutes = String(minutes).padStart(2, '0');
-        const paddedSeconds = String(remainingSeconds).padStart(2, '0');
-        
-        // Return the formatted string
-        return `${paddedMinutes}:${paddedSeconds}`;
-    }
-
-
     // Listen for time update 
     currentSong.addEventListener("timeupdate", ()=>{
-        document.querySelector(".songtime").innerHTML = innerHTML +
+        // document.querySelector(".songtime").innerHTML = innerHTML +
         console.log(formatTime(currentSong.currentTime), formatTime(currentSong.duration))
+        if (!isNaN(currentSong.duration) && !isNaN(currentSong.currentTime)) {
+            document.querySelector(".song-time").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`;
+        }
+
+
+        // lets change the seekbar according to the song
+        document.querySelector(".circle").style.left = (currentSong.currentTime/currentSong.duration) * 100 + "%" 
     })
 
+
+
+    // lets add event listener to seekbar
+    document.querySelector(".seekbar").addEventListener("click", (e)=>{
+        console.log(e)
+    })
 }  
 
 playSongs()
