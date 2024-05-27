@@ -148,19 +148,61 @@ async function playSongs() {
         // document.querySelector(".songtime").innerHTML = innerHTML +
         console.log(formatTime(currentSong.currentTime), formatTime(currentSong.duration))
         if (!isNaN(currentSong.duration) && !isNaN(currentSong.currentTime)) {
-            document.querySelector(".song-time").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`;
+            document.querySelector(".song-time").innerHTML = 
+                `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`;
         }
 
 
-        // lets change the seekbar according to the song
-        document.querySelector(".circle").style.left = (currentSong.currentTime/currentSong.duration) * 100 + "%" 
+        // lets change the seekbar circle according to the song
+        document.querySelector(".circle").style.left = 
+                (currentSong.currentTime/currentSong.duration) * 100 + "%" 
     })
 
 
 
     // lets add event listener to seekbar
     document.querySelector(".seekbar").addEventListener("click", (e)=>{
-        console.log(e)
+        // console.log(e)
+        // lets find the values of x and y values on seekbar
+        // console.log(e.offsetX, e.offsetY)   // o/p: 253 3
+        
+        // we want only the x value so we use only offsetX and 
+        // we use "target" also to get the seekbar div block
+        console.log(e.target,e.offsetX)     // o/p: <div class="seekbar"><div class="circle"></div></div>  240
+
+        // getBoundingClientRect() shows all the details where the block is 
+        // DOMRect {x: 389.71875, y: 259.8333435058594, width: 475.26043701171875, height: 6, top: 259.8333435058594, left , right, bottom …}
+
+        // we want only the "width" so we use ".width" of the seekbar and 
+        // offsetX value to set
+        //  the circle on seekbar and we use "target" to get the block of 
+        // element with getboundingclientrect() because without using 
+        // "target" it does not work 
+        console.log(e.target.getBoundingClientRect().width, e.offsetX)
+        // we want the value in percentage so we multiply * 100 and add % 
+        let clickedOnSeekbar = (e.offsetX/e.target.getBoundingClientRect().width) * 100
+        console.log(clickedOnSeekbar)
+
+
+        // now we change the circle left with the above value
+        document.querySelector(".circle").style.left = clickedOnSeekbar + "%"
+        currentSong.currentTime = ((currentSong.duration) * clickedOnSeekbar) / 100 
+        
+
+    })
+
+
+
+
+    // Adding hamburger click event
+    document.querySelector(".hamburger").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left = "0"
+    })
+
+
+    // adding event listener to hamburgerClose
+    document.querySelector(".hamburgerClose").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left = "-100%"
     })
 }  
 
