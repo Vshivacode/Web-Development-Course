@@ -15,6 +15,7 @@ body{
     width: 23vw;
     position: relative;
     background-color: black;
+    border: 2px solid white;
 }
 
 .home-box{
@@ -183,12 +184,12 @@ body{
 /* left - footer starts here  */
 .left-footer{
     position: absolute;
-    padding: 5px 0px 30px 10px;
+    padding: 0px 0px 30px 10px;
     background-color: rgb(48, 48, 48);
     padding: 14px;
     border-radius: 10px;
-    margin: 14px 6px;
-    
+    bottom: 10;
+    margin: 0px 6px;
 }
 
 .left-footer a{
@@ -225,6 +226,7 @@ body{
 /* Right side starts here */
 .right{
     width: 77vw;
+    height: auto;
     background-color: rgb(12, 12, 12);
     position: relative;             /* this is for playbar */
 }
@@ -398,7 +400,7 @@ body{
     border: 2px solid red;
     position: fixed;
     bottom: 0;
-    width: 99%;
+    width: 100%;
     /* gap: 20px; */
     height: 72px;
 }
@@ -465,19 +467,24 @@ body{
 @media (max-width: 1600px) {
     .left{
         width: 23vw;
+
     }
 }
-@media (max-width: 1350px) {
+@media (max-width: 1050px) {
     .left{
-        /* width: 23vw; */
         position: absolute;
         left: -100%;
         transition: all 0.3s;
         z-index: 1;
+        width: auto;
+        height: 102vh;
+
     }
     
     .right{
         width: 100%;
+        grid-area: w1;
+
     }
     
     .hamburger{
