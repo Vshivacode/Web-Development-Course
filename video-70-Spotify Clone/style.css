@@ -3,19 +3,40 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     font-family: "Poppins", sans-serif;
     background-color: black;
     color: white;
+    
 }
 
+.container {
+    display: grid;
+    width: 100vw;
+    grid-template-areas:
+        "left right"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    height: calc(100vh - 110px); 
+}
+
+
 .left{
+    overflow: auto;
+    grid-area: left;
     width: 23vw;
     position: relative;
     background-color: black;
     border: 2px solid white;
+}
+
+.left::-webkit-scrollbar{
+    width: 0px;
+    /* scroll-behavior: smooth; */
 }
 
 .home-box{
@@ -63,7 +84,7 @@ body{
 }
 
 .plus-logo {
-    width: 16px;
+    width: 26px;
     padding: 5px;
 }
 
@@ -145,7 +166,7 @@ body{
     align-items: center;
     cursor: pointer;
     gap: 16px;
-    max-width: 88%;
+    max-width: 98%;
 }
 
 .songs-section-title{
@@ -225,8 +246,10 @@ body{
 
 /* Right side starts here */
 .right{
+    overflow: auto;
+    grid-area: right;
     width: 77vw;
-    height: auto;
+    height: 100%;
     background-color: rgb(12, 12, 12);
     position: relative;             /* this is for playbar */
 }
@@ -244,7 +267,7 @@ body{
 }
 
 .arrows img{
-    width: 14px;
+    width: 26px;
     padding: 6px;
     background-color: rgb(40, 40, 40);
     border-radius: 25px;
@@ -391,18 +414,20 @@ body{
 
 /* playbar starts here  */
 .playbar{
+    grid-area: footer;
     background-color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 0px 0;
     border: 2px solid red;
     position: fixed;
     bottom: 0;
     width: 100%;
     /* gap: 20px; */
-    height: 72px;
+    height: 110px;
+    padding: 15px 0px;
 }
 
 .song-info{
@@ -431,6 +456,7 @@ body{
     position: relative;
     background-color: rgb(95, 95, 95);
     cursor: pointer;
+    margin: 0;
 }
 
 .circle{
